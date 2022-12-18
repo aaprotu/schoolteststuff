@@ -31,10 +31,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     
-    - name: npm install, npm test
+    - name: npm install, npm test, npm run coverage
       run: |
         npm install
         npm test
+        npm run coverage
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
